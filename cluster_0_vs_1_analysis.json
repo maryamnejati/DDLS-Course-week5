@@ -1,0 +1,72 @@
+{
+  "dataset": "/home/maryam/Documents/ddls-week5/ddls-week5-s1-junk-or-signal-dataset/data/pbmc3k.h5ad",
+  "n_cells": 1686,
+  "cell_counts": {
+    "0": 1197,
+    "1": 489
+  },
+  "quality_tests": {
+    "n_genes": {
+      "cluster_0_mean": 807.2765246449457,
+      "cluster_1_mean": 858.5255623721881,
+      "cluster_0_median": 809.0,
+      "cluster_1_median": 850.0,
+      "u_statistic": 259552.5,
+      "pvalue": 0.0002618550120457665
+    },
+    "total_counts": {
+      "cluster_0_mean": 2336.4501953125,
+      "cluster_1_mean": 2381.259765625,
+      "cluster_0_median": 2312.0,
+      "cluster_1_median": 2305.0,
+      "u_statistic": 290705.0,
+      "pvalue": 0.8288498520851135
+    },
+    "pct_mito": {
+      "cluster_0_mean": 1.9625897407531738,
+      "cluster_1_mean": 2.4494314193725586,
+      "cluster_0_median": 1.7543859481811523,
+      "cluster_1_median": 2.2515761852264404,
+      "u_statistic": 195917.0,
+      "pvalue": 1.4772468156153193e-26
+    }
+  },
+  "classification": {
+    "method": "5-fold stratified logistic regression on 1,000 most variable genes",
+    "roc_auc_mean": 1.0,
+    "roc_auc_sd": 0.0,
+    "folds": [
+      1.0,
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "markers": [
+    {
+      "group": "0",
+      "gene": "MALAT1",
+      "score": 30.257041931152344,
+      "logfoldchange": 1.7868343591690063,
+      "pvalue": 4.215285724805778e-201,
+      "pvalue_adj": 4.817369035832204e-198,
+      "fraction_0": 1.0,
+      "fraction_1": 1.0,
+      "mean_0": 5.748074531555176,
+      "mean_1": 4.517319679260254
+    },
+    {
+      "group": "1",
+      "gene": "RPS27",
+      "score": 30.18340301513672,
+      "logfoldchange": 1.577972650527954,
+      "pvalue": 3.9116193651803396e-200,
+      "pvalue_adj": 4.1264575364679366e-197,
+      "fraction_0": 0.9991645781119465,
+      "fraction_1": 0.983640081799591,
+      "mean_0": 4.527477741241455,
+      "mean_1": 3.454941987991333
+    }
+  ]
+}
