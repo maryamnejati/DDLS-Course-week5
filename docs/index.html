@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PBMC 3K Navigator</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#5b6578; --brand:#4f46e5; --soft:#eef2ff; --line:#e3e8f2; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif; color:var(--ink); background:#f8fafc; line-height:1.6; }
+    main { max-width:1000px; margin:auto; padding:56px 20px 72px; }
+    .eyebrow { color:var(--brand); font-weight:700; text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; }
+    h1 { font-size:clamp(2.3rem,6vw,4.5rem); line-height:1.05; margin:.4rem 0 1rem; letter-spacing:-.04em; }
+    h2 { margin-top:0; font-size:1.45rem; }
+    .lead { max-width:720px; font-size:1.15rem; color:var(--muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin:28px 0 42px; }
+    a.button { display:inline-block; padding:11px 17px; border-radius:9px; text-decoration:none; font-weight:700; border:1px solid var(--brand); color:white; background:var(--brand); }
+    a.button.secondary { color:var(--brand); background:white; }
+    section { background:white; border:1px solid var(--line); border-radius:16px; padding:24px; margin:20px 0; box-shadow:0 8px 24px #1720330a; }
+    .shot { width:100%; display:block; border-radius:10px; border:1px solid var(--line); background:var(--soft); }
+    .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); }
+    .card { background:#f8fafc; border-radius:12px; padding:16px; }
+    .card h3 { margin:.1rem 0 .35rem; font-size:1rem; }
+    .card p { margin:0; color:var(--muted); font-size:.94rem; }
+    code { background:#f1f5f9; border-radius:5px; padding:2px 5px; }
+    footer { color:var(--muted); font-size:.9rem; margin-top:28px; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Single-cell analysis navigator</div>
+  <h1>PBMC 3K Navigator</h1>
+  <p class="lead">An interactive browser for exploring 2,700 human PBMCs, understanding cluster marker genes, and making evidence-based decisions about clusters 0, 1, and 6.</p>
+  <div class="actions">
+    <a class="button" href="https://github.com/maryamnejati/DDLS-Course-week5">View the GitHub repository</a>
+    <a class="button secondary" href="https://github.com/maryamnejati/DDLS-Course-week5#run-the-app">How to run it</a>
+  </div>
+  <section>
+    <h2>Explore the UMAP</h2>
+    <p>The cluster view uses a different color for each Leiden cluster and a dotted boundary to make groups easy to compare. Click a cluster to see its top markers and quality metrics.</p>
+    <img class="shot" src="umap-screenshot.svg" alt="Illustration of the PBMC UMAP by cluster">
+  </section>
+  <section>
+    <h2>What the navigator does</h2>
+    <div class="grid">
+      <div class="card"><h3>Overview</h3><p>Explore the UMAP, cluster sizes, top marker genes, and gene-expression patterns.</p></div>
+      <div class="card"><h3>Cluster 0 vs 1</h3><p>Review quality statistics, differential markers, and the evidence for keeping the clusters separate.</p></div>
+      <div class="card"><h3>Cluster 6</h3><p>Assess the 13-cell cluster, including its platelet-associated <code>PPBP</code>/<code>PF4</code> signal.</p></div>
+    </div>
+  </section>
+  <section>
+    <h2>Run locally</h2>
+    <p>Clone the repository, install the dependencies, and start the FastAPI server:</p>
+    <pre><code>git clone https://github.com/maryamnejati/DDLS-Course-week5.git
+cd DDLS-Course-week5
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app:app --host 0.0.0.0 --port 8000</code></pre>
+    <p>Then open <code>http://localhost:8000</code>. Full instructions are in the <a href="https://github.com/maryamnejati/DDLS-Course-week5#readme">README</a>.</p>
+  </section>
+  <footer>PBMC 3K Navigator · Built with FastAPI, Scanpy, Tailwind CSS, and Plotly.</footer>
+</main>
+</body>
+</html>
